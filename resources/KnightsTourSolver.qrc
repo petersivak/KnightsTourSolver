@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/black_square.png</file>
+        <file>images/down_frame.png</file>
+        <file>images/downleft_frame.png</file>
+        <file>images/downright_frame.png</file>
+        <file>images/knight.png</file>
+        <file>images/left_frame.png</file>
+        <file>images/right_frame.png</file>
+        <file>images/up_frame.png</file>
+        <file>images/upleft_frame.png</file>
+        <file>images/upright_frame.png</file>
+        <file>images/white_square.png</file>
+        <file>fonts/lato.ttf</file>
+    </qresource>
+</RCC>
