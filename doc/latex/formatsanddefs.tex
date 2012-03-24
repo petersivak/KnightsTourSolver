@@ -1,0 +1,147 @@
+% Packages
+\usepackage[english]{babel}
+\usepackage{verbatim}
+\usepackage[utf8x]{inputenc}
+\usepackage{float}
+%\usepackage[T1]{fontenc}
+\usepackage{newcent}
+\usepackage{graphicx}
+\usepackage{setspace}
+\onehalfspacing
+\usepackage[numbers]{natbib}
+\usepackage{url}
+\usepackage{listings}
+\usepackage[usenames]{color}
+\usepackage{epsf}
+\usepackage{epsfig}
+\usepackage{latexsym}
+\usepackage{ucs}
+\usepackage{eso-pic}
+\usepackage{moreverb}
+\usepackage{microtype}
+\usepackage{sectsty}
+\usepackage{times}
+\usepackage[colorlinks=true,linkcolor = blue]{hyperref}
+
+% Colors
+\definecolor{light-gray}{gray}{0.95}
+\definecolor{gray}{gray}{0.2}
+\definecolor{blue}{rgb}{0,0,1}
+\definecolor{red}{rgb}{1,0,0}
+\definecolor{green}{rgb}{0,0.69,0}
+\definecolor{yellow}{rgb}{1,0.35,0}
+
+% Listings
+\lstdefinelanguage{lua}{
+	morekeywords={and,break,do,else,elseif,end,false,for,function,if,in,local,nil,not,or,repeat,return,then,true,until,while},
+	morekeywords={[2]arg,assert,collectgarbage,dofile,error,_G,getfenv,getmetatable,ipairs,load,loadfile,loadstring,next,pairs,pcall,print,rawequal,rawget,rawset,select,setfenv,setmetatable,tonumber,tostring,type,unpack,_VERSION,xpcall},
+	morekeywords={[2]coroutine.create,coroutine.resume,coroutine.running,coroutine.status,coroutine.wrap,coroutine.yield},
+	morekeywords={[2]module,require,package.cpath,package.load,package.loaded,package.loaders,package.loadlib,package.path,package.preload,package.seeall},
+	morekeywords={[2]string.byte,string.char,string.dump,string.find,string.format,string.gmatch,string.gsub,string.len,string.lower,string.match,string.rep,string.reverse,string.sub,string.upper},
+	morekeywords={[2]table.concat,table.insert,table.maxn,table.remove,	table.sort},
+	morekeywords={[2]math.abs,math.acos,math.asin,math.atan,math.atan2,math.ceil,math.cos,math.cosh,math.deg,math.exp,math.floor,math.fmod,math.frexp,math.huge,math.ldexp,math.log,math.log10,math.max,math.min,math.modf,math.pi,math.pow,math.rad,math.random,math.randomseed,math.sin,math.sinh,math.sqrt,math.tan,math.tanh},
+	morekeywords={[2]io.close,io.flush,io.input,io.lines,io.open,io.output,io.popen,io.read,io.tmpfile,io.type,io.write,file:close,file:flush,file:lines,file:read,file:seek,file:setvbuf,file:write},
+	morekeywords={[2]os.clock,os.date,os.difftime,os.execute,os.exit,os.getenv,os.remove,os.rename,os.setlocale,os.time,os.tmpname},
+	keywordstyle=\color{blue}\bfseries,
+	ndkeywordstyle=\color{black}\bfseries,
+	commentstyle=\color{red}\ttfamily,
+	stringstyle=\color{green}\ttfamily,
+	identifierstyle=\color{gray},
+	sensitive=true,
+	morecomment=[l]{--},
+	morecomment=[s]{--[[}{]]--},
+	morestring=[b]",
+	morestring=[d]',
+	backgroundcolor=\color{white},
+	frame=single,
+	frameround=ffff,
+	captionpos=b,
+	basicstyle=\scriptsize
+}
+
+\lstdefinelanguage{nil}{
+  identifierstyle=\color{gray},
+  sensitive=false,
+  columns=flexible,
+  backgroundcolor=\color{white},
+  frame=single,
+  frameround=ffff,
+  captionpos=b
+}
+
+\lstdefinelanguage{javascript}{
+  keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+  morestring=[b]",
+  keywordstyle=\color{blue}\bfseries,
+	ndkeywordstyle=\color{black}\bfseries,
+	commentstyle=\color{red}\ttfamily,
+	stringstyle=\color{green}\ttfamily,
+	identifierstyle=\color{gray},
+	backgroundcolor=\color{white},
+	frame=single,
+	frameround=ffff,
+	captionpos=b,
+	basicstyle=\scriptsize
+}
+
+
+
+\lstdefinestyle{color}
+	{identifierstyle=\color{green}\bfseries, commentstyle=\color{yellow}\bfseries, stringstyle=\color{blue}, keywordstyle=\color{red}\bfseries,morecomment=[l]{\#}}
+
+\lstset{postbreak=\small>>\space,prebreak=\small>>,breakindent=13pt,breaklines=true,inputencoding=utf8x,tabsize=2,showtabs=false,tab=$\to$,style=color,basicstyle=\footnotesize\ttfamily\bfseries,frame=lines,frameround=tttt}
+
+%
+% this makes list spacing much better.
+%
+\newenvironment{my_itemize}{
+\begin{itemize}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}}{
+\end{itemize}
+}
+
+\newenvironment{my_enumerate}{
+\begin{enumerate}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}}{
+\end{enumerate}
+}
+
+\newcommand{\emptyitem}{\item[]}
+\newcommand{\myitem}{\item[$-$]}
+
+\makeatletter
+\renewcommand{\paragraph}{\@startsection{paragraph}{4}{0ex}%
+   {-3.25ex plus -1ex minus -0.2ex}%
+   {1.5ex plus 0.2ex}%
+   {\normalfont\normalsize\bfseries}}
+\makeatother
+
+
+% Figures
+\usepackage[small,normal,bf,up]{caption}
+\renewcommand{\captionfont}{\small\itshape}
+\graphicspath{{figures/}}
+
+\stepcounter{secnumdepth}
+\stepcounter{tocdepth}
+
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+\begin{comment}
+%% PDF meta-data
+\hypersetup{%
+pdftitle={\Title},%
+pdfauthor={\Author},%
+pdfkeywords={key words},%
+}%
+\end{comment}

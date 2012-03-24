@@ -1,0 +1,36 @@
+\newpage
+
+\section{Data Structures and Algorithms}
+
+We have divide our program into several classes:
+
+\begin{enumerate}
+\item \textbf{Main} - Starts the application.
+\item \textbf{MainWindow} - Represents the application window.
+\item \textbf{ChessboardScene} - Is responsible for visualizing the chessboard.
+\item \textbf{Solver} - Is responsible for solving the knight's tour problem and represents the main part of the application.
+\item \textbf{Node} - Represents a node in a searching tree.
+\end{enumerate}
+
+We have implemented the solution searching algorithm using depth-first search:\cite{UI}
+
+\begingroup
+\fontsize{10}{10}
+\begin{verbatim}
+  function DEPTH-FIRST-SEARCH(problem, PUSH-TO-STACK)
+          returns solution or failure
+      static: stack, stack containing generated and undeveloped
+                     nodes, empty at the beginning
+              node, node of searching tree
+
+      stack <- CREATE-STACK(CREATE-NODE(INITIAL-STATE[problem]))
+      loop do
+          if stack is empty then return failure
+          node <- POP(stack)
+          if SOLUTION-TEST[problem] applicated on STATE(node) is
+              successful then return CHOOSE-SOLUTION(node)
+          stack <- PUSH-TO-STACK(EXPAND(node, OPERATORS[problem]),
+              stack)
+      end
+\end{verbatim}
+\endgroup

@@ -1,0 +1,56 @@
+\documentclass[a4paper,12pt]{article}
+
+%%
+%% Formats and Defs
+%%
+\input{formatsanddefs.tex}
+
+\begin{document}
+
+%%
+%% Title Page
+%%
+\input{titlepage.tex}
+
+%%
+%% Clear Page And Set New Page Counter
+%%
+\clearpage
+\setcounter{page}{1}
+
+\sectionfont{\sectionrule{0pt}{0pt}{-2ex}{0.5pt}}
+
+%%
+%% Assignment
+%%
+\input{assignment.tex}
+
+%%
+%% Solution
+%%
+\input{solution.tex}
+
+%%
+%% Data structures and algorithms
+%%
+\input{datastructuresandalgorithms.tex}
+
+%%
+%% Testing
+%%
+\input{testing.tex}
+
+%%
+%% Conclusions
+%%
+\input{conclusions.tex}
+
+%%
+%% References
+%%
+\newpage
+\addcontentsline{toc}{section}{\refname}
+\bibliographystyle{plain}
+\bibliography{references.bib}
+
+\end{document}
