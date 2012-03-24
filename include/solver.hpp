@@ -89,9 +89,6 @@ private:
 
 	bool isSearchingForSolution() const;
 
-	void printVisitedPositions() const;
-	void printNodeStack(const QStack<Node *> &nodes) const;
-
 	int mChessboardSize;
 	Vector2b mStartPos;
 

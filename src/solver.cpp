@@ -2,8 +2,6 @@
 
 #include <QMap>
 
-#include <cstdio>
-
 Solver::Solver() :
 	mChessboardSize(8),
 	mStartPos(0, 0),
@@ -55,6 +53,7 @@ void Solver::searchForSolution()
 		if (mVisitedPositions[currentNode->pos().y()][currentNode->pos().x()] == true)
 		{
 			mVisitedPositions[currentNode->pos().y()][currentNode->pos().x()] = false;
+			delete nodes.top();
 			nodes.pop();
 			if (!nodes.isEmpty() && mVisitedPositions[nodes.top()->pos().y()][nodes.top()->pos().x()] == true)
 				--currentDepth;
@@ -93,6 +92,7 @@ void Solver::searchForSolution()
 		else
 		{
 			mVisitedPositions[currentNode->pos().y()][currentNode->pos().x()] = false;
+			delete nodes.top();
 			nodes.pop();
 			if (!nodes.isEmpty() && mVisitedPositions[nodes.top()->pos().y()][nodes.top()->pos().x()] == true)
 				--currentDepth;
@@ -202,26 +202,3 @@ void Solver::expandNode(const Node *parent, QStack<Node *> &nodes, const QList<V
 }
 
 bool Solver::isSearchingForSolution() const { return mIsSearchingForSolution; }
-
-void Solver::printVisitedPositions() const
-{
-	printf("--------\n");
-	for (int i = 0; i < mVisitedPositions.size(); ++i)
-	{
-		for (int j = 0; j < mVisitedPositions[i].size(); ++j)
-		{
-			printf("%d ", mVisitedPositions[j][i]);
-		}
-		printf("\n");
-	}
-}
-
-void Solver::printNodeStack(const QStack<Node *> &nodes) const
-{
-	printf("--------\n");
-	for (int i = 0; i < nodes.size(); ++i)
-	{
-		printf("%d %d, ", nodes[i]->pos().x(), nodes[i]->pos().y());
-	}
-	printf("\n");
-}

@@ -268,7 +268,6 @@ void ChessboardScene::mousePressEvent(QGraphicsSceneMouseEvent *event)
 	mKnightGraphicsItem->setPos( ((int) (x - FRAME_SIZE) / SQUARE_SIZE) * SQUARE_SIZE + FRAME_SIZE,
 								 ((int) (y - FRAME_SIZE) / SQUARE_SIZE) * SQUARE_SIZE + FRAME_SIZE );
 
-	qDebug("%d %d", (int) (x - FRAME_SIZE) / SQUARE_SIZE, (int) (y - FRAME_SIZE) / SQUARE_SIZE);
 	mSolver.setStartPosition( Vector2b((int) (x - FRAME_SIZE) / SQUARE_SIZE,
 									   (int) (y - FRAME_SIZE) / SQUARE_SIZE) );
 }
